@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [' KSA Community Forever ♥ ',`${client.users.size} Members`,' KSA Community Forever ♥'];
+    var setGame = [' KSA Community Forever ♥ ',' KSA Community Forever ♥'];
     var i = -1;
     var j = 0;
     setInterval(function (){
