@@ -2473,4 +2473,88 @@ client.on('message', function(message) {
 	}
 });
 })
+
+
+client.on('message', message => {
+    if (message.content.startsWith("رابط")) {
+
+  message.channel.createInvite({
+        thing: true,
+        maxUses: 100,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+    const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription("| :white_check_mark:  | :heart:  تم ارسال الرابط على الخاص  ")
+      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
+              const Embed11 = new Discord.RichEmbed()
+        .setColor("RANDOM")
+                .setAuthor(message.guild.name, message.guild.iconURL)
+        .setDescription(`
+**
+---------------------
+-[${message.guild.name}]  هذا هو رابط سيرفر
+---------------------
+-هذا الرابط صالح ل 100 مستخدم فقط
+---------------------
+-هذا الرابط صالح لمده 24 ساعه فقط
+---------------------
+**`)
+      message.author.sendEmbed(Embed11)
+    }
+});
+
+
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '521265412944691211').setName("W");
+client.channels.find('id', '521265412944691211').setName("We");
+client.channels.find('id', '521265412944691211').setName("Wel");
+client.channels.find('id', '521265412944691211').setName("Welc");
+client.channels.find('id', '521265412944691211').setName("Welco");
+client.channels.find('id', '521265412944691211').setName("Welcom");
+client.channels.find('id', '521265412944691211').setName("Welcome");
+client.channels.find('id', '521265412944691211').setName("Welcome T");
+client.channels.find('id', '521265412944691211').setName("Welcome To");
+client.channels.find('id', '521265412944691211').setName("Welcome To K");
+client.channels.find('id', '521265412944691211').setName("Welcome To KS");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA C");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Com");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Comm");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Commu");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Commun");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Communi");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Communit");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community");
+  }, 3000);
+});
+
+
+var prefix = "*";
+
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
+
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  **Welcome To KSA Community**:rose: 
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
 client.login(process.env.BOT_TOKEN);
