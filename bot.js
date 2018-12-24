@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [`${client.guilds.size} Server`,' Premium Bot™ by n3k4a & Baron','Type -help |-support |-invite ',`${client.users.size} Members`,'-invite','By: n3k4a & Hosam | BaronTube'];
+    var setGame = [' KSA Community SYSTEM'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -28,7 +28,7 @@ client.on('ready', function(){
             j = -1;
         }
         i = i+j;
-        client.user.setGame(setGame[i],`http://www.twitch.tv/n3k4a`);
+        client.user.setGame(setGame[i],`http://www.twitch.tv/m7md`);
     }, ms);
     console.log(` ╔═══╗──╔╗ |> Name: ${client.user.username}`);
  console.log(` ║╔═╗║──║║ |> Servers: ${client.guilds.size}`);
@@ -125,7 +125,7 @@ const x5bz4 = [
 var prefix = "-";
 
 client.on('message', message => {
-if (message.content === "-help") {
+if (message.content === "-he") {
     let pages = [`
 ***__وصف عن البوت__***
 **
@@ -429,7 +429,7 @@ client.on("guildMemberAdd", member => {
                               ctx.font = '30px Arial';
                               ctx.fontSize = '28px';
                               ctx.fillStyle = "#FFFFFF";
-      ctx.fillText(`Welcome To Server`, 245, 80);
+      ctx.fillText(`Welcome To KSA`, 245, 80);
     
                               //AVATARً
                               let Avatar = Canvas.Image;
@@ -2473,4 +2473,59 @@ client.on('message', function(message) {
 	}
 });
 })
+
+
+client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  **Welcome To KSA Community:rose: 
+:crown:اسم العضو  ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
+
+
+var prefix = "*";
+
+client.on("message", message => {
+
+            if (message.content.startsWith(prefix + "bc")) {
+                         if (!message.member.hasPermission("ADMINISTRATOR"))  return;
+  let args = message.content.split(" ").slice(1);
+  var argresult = args.join(' '); 
+  message.guild.members.filter(m => m.presence.status !== 'offline').forEach(m => {
+ m.send(`${argresult}\n ${m}`);
+})
+ message.channel.send(`\`${message.guild.members.filter(m => m.presence.status !== 'online').size}\` : عدد الاعضاء المستلمين`); 
+ message.delete(); 
+};     
+});
+
+
+client.on("ready", async  => {
+setInterval(function(){
+client.channels.find('id', '521265412944691211').setName("W");
+client.channels.find('id', '521265412944691211').setName("We");
+client.channels.find('id', '521265412944691211').setName("Wel");
+client.channels.find('id', '521265412944691211').setName("Welc");
+client.channels.find('id', '521265412944691211').setName("Welco");
+client.channels.find('id', '521265412944691211').setName("Welcom");
+client.channels.find('id', '521265412944691211').setName("Welcome");
+client.channels.find('id', '521265412944691211').setName("Welcome T");
+client.channels.find('id', '521265412944691211').setName("Welcome To");
+client.channels.find('id', '521265412944691211').setName("Welcome To K");
+client.channels.find('id', '521265412944691211').setName("Welcome To KS");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA C");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Com");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Comm");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Commu");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Commun");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Communi");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Communit");
+client.channels.find('id', '521265412944691211').setName("Welcome To KSA Community");
+  }, 3000);
+});
+
+
+
 client.login(process.env.BOT_TOKEN);
