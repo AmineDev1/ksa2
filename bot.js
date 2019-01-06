@@ -17,7 +17,7 @@ client.on('ready', () => {
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = [' KSA Community SYSTEM'];
+    var setGame = [' Victory For Photoshop ♥'];
     var i = -1;
     var j = 0;
     setInterval(function (){
